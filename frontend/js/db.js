@@ -1,5 +1,6 @@
 // ─── API CONFIG ──────────────────────────────────────────────────────────────
-const API_URL = 'http://localhost:3001';
+// En local l'API tourne sur le port 3001 ; en ligne elle est hébergée sur Render.
+const API_URL = ['localhost', '127.0.0.1'].includes(location.hostname) ? 'http://localhost:3001' : 'https://forum-team-xxl.onrender.com';
 
 // ─── SESSION (JWT dans localStorage) ─────────────────────────────────────────
 const Session = {
