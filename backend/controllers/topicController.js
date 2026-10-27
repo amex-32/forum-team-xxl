@@ -36,7 +36,7 @@ exports.getAllTopics = async (req, res) => {
       params.push(tag);
     }
 
-    query += ` GROUP BY t.id ORDER BY t.created_at DESC LIMIT ${limit} OFFSET ${offset}`; // entiers déjà validés (MySQL 8+ refuse LIMIT ? en requête préparée)
+    query += ` GROUP BY t.id, u.username ORDER BY t.created_at DESC LIMIT ${limit} OFFSET ${offset}`; // entiers déjà validés (MySQL 8+ refuse LIMIT ? en requête préparée)
 
     const [topics] = await db.execute(query, params);
 
@@ -96,7 +96,7 @@ exports.getTopicById = async (req, res) => {
       LEFT JOIN topic_tags tt ON t.id = tt.topic_id
       LEFT JOIN tags tg ON tt.tag_id = tg.id
       WHERE t.id = ?
-      GROUP BY t.id
+      GROUP BY t.id, u.username
     `, [id]);
 
     if (topics.length === 0) {
