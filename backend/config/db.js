@@ -9,6 +9,7 @@ const pool = mysql.createPool({
   database: process.env.DB_NAME     || 'forum_music',
   waitForConnections: true,
   connectionLimit:    10,
+  ssl: process.env.DB_SSL ? { rejectUnauthorized: true } : undefined,
 });
 
 module.exports = pool;

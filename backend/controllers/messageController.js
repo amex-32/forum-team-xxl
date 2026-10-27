@@ -36,8 +36,8 @@ exports.getMessagesByTopic = async (req, res) => {
       JOIN users u ON m.author_id = u.id
       WHERE m.topic_id = ?
       ORDER BY m.${sort} DESC
-      LIMIT ? OFFSET ?
-    `, [topicId, limit, offset]);
+      LIMIT ${limit} OFFSET ${offset}
+    `, [topicId]);
 
     const [[{ total }]] = await db.execute(
       `SELECT COUNT(*) AS total FROM messages WHERE topic_id = ?`, [topicId]

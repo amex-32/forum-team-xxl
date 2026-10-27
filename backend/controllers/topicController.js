@@ -36,8 +36,7 @@ exports.getAllTopics = async (req, res) => {
       params.push(tag);
     }
 
-    query += ` GROUP BY t.id ORDER BY t.created_at DESC LIMIT ? OFFSET ?`;
-    params.push(limit, offset);
+    query += ` GROUP BY t.id ORDER BY t.created_at DESC LIMIT ${limit} OFFSET ${offset}`; // entiers déjà validés (MySQL 8+ refuse LIMIT ? en requête préparée)
 
     const [topics] = await db.execute(query, params);
 
