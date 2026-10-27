@@ -10,16 +10,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Omrane02/livrables_forum_teamXXL.git"
+    "url": "git+https://github.com/amex-32/forum-team-xxl.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "bugs": {
-    "url": "https://github.com/Omrane02/livrables_forum_teamXXL/issues"
+    "url": "https://github.com/amex-32/forum-team-xxl/issues"
   },
-  "homepage": "https://github.com/Omrane02/livrables_forum_teamXXL#readme",
+  "homepage": "https://github.com/amex-32/forum-team-xxl#readme",
   "dependencies": {
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",

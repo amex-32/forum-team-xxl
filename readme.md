@@ -1,29 +1,20 @@
-# 🎵 Plein les oreilles — Forum Musical
+# Plein les oreilles : forum musical
 
-## 👥 Équipe
+Forum autour de la musique : création de sujets, réponses, comptes utilisateurs et page d'administration. API Node.js (Express, JWT) avec une base MySQL, front en HTML/JS.
 
-| Team XXL |
+Projet de groupe réalisé en formation, avec Omrane Riahi.
 
-| Alexandre KLOTZ |
-| Omrane RIAHI |
+## Lancer le projet
 
+1. Démarrer MySQL et créer une base `forum_music`.
+2. Importer `migration.sql` puis `insertion.sql` (dossier `backend/database/`).
+3. Créer `backend/.env` avec `DB_HOST`, `DB_PORT`, `DB_USER`, `DB_PASSWORD`, `DB_NAME` et `JWT_SECRET`. Les valeurs par défaut sont dans `backend/config/db.js`.
+4. Démarrer l'API :
 
----
-
-## 🚀 Lancement du projet
-
-**1. Lancer MAMP et démarrer MySQL**
-
-**2. Importer la base de données dans phpMyAdmin**
-- Créer une base nommée `forum_music`
-- Importer `migration.sql` puis `insertion.sql`
-
-**3. Lancer le backend**
 ```bash
 cd backend
+npm install
 npm run dev
 ```
 
-**4. Ouvrir le frontend**
-
-Ouvrir `frontend/index.html` dans votre navigateur.
+L'API écoute sur le port 3000. Ouvrir ensuite `frontend/index.html` dans le navigateur.
