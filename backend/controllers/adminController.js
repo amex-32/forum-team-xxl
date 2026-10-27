@@ -19,8 +19,8 @@ exports.getAllUsers = async (req, res) => {
       FROM users u
       JOIN profiles p ON u.id = p.user_id
       ORDER BY u.created_at DESC
-      LIMIT ? OFFSET ?
-    `, [limit, offset]);
+      LIMIT ${limit} OFFSET ${offset}
+    `);
 
     const [[{ total }]] = await db.execute(
       `SELECT COUNT(*) AS total FROM users`
@@ -239,8 +239,8 @@ exports.getAllUsers = async (req, res) => {
       FROM users u
       JOIN profiles p ON u.id = p.user_id
       ORDER BY u.created_at DESC
-      LIMIT ? OFFSET ?
-    `, [limit, offset]);
+      LIMIT ${limit} OFFSET ${offset}
+    `);
 
     const [[{ total }]] = await db.execute(
       `SELECT COUNT(*) AS total FROM users`
